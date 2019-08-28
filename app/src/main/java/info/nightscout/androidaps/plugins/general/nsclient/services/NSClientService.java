@@ -107,9 +107,9 @@ public class NSClientService extends Service {
     public static UploadQueue uploadQueue = new UploadQueue();
 
     private ArrayList<Long> reconnections = new ArrayList<>();
-    private int WATCHDOG_INTERVAL_MINUTES = 2;
-    private int WATCHDOG_RECONNECT_IN = 15;
-    private int WATCHDOG_MAXCONNECTIONS = 25;
+    private int WATCHDOG_INTERVAL_MINUTES = 1;
+    private int WATCHDOG_RECONNECT_IN = 10;
+    private int WATCHDOG_MAXCONNECTIONS = 20;
 
     public NSClientService() {
         registerBus();
