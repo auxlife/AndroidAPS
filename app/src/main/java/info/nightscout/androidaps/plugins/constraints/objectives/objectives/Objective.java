@@ -124,7 +124,7 @@ public abstract class Objective {
         @Override
         public boolean isCompleted() {
             return true;
-            #return getObjective().isStarted() && System.currentTimeMillis() - getObjective().getStartedOn().getTime() >= minimumDuration;
+            //return getObjective().isStarted() && System.currentTimeMillis() - getObjective().getStartedOn().getTime() >= minimumDuration;
         }
 
         @Override
