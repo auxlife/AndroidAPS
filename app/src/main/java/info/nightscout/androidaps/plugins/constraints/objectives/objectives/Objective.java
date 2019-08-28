@@ -37,7 +37,7 @@ public abstract class Objective {
     public boolean isCompleted() {
         for (Task task : tasks) {
             if (!task.shouldBeIgnored() && !task.isCompleted())
-                return false;
+                return true;
         }
         return true;
     }
@@ -123,7 +123,8 @@ public abstract class Objective {
 
         @Override
         public boolean isCompleted() {
-            return getObjective().isStarted() && System.currentTimeMillis() - getObjective().getStartedOn().getTime() >= minimumDuration;
+            return true;
+            #return getObjective().isStarted() && System.currentTimeMillis() - getObjective().getStartedOn().getTime() >= minimumDuration;
         }
 
         @Override
