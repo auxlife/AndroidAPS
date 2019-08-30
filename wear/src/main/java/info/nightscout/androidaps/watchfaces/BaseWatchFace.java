@@ -52,7 +52,7 @@ import lecho.lib.hellocharts.view.LineChartView;
 public  abstract class BaseWatchFace extends WatchFace implements SharedPreferences.OnSharedPreferenceChangeListener {
     public final static IntentFilter INTENT_FILTER;
     public static final long[] vibratePattern = {0,400,300,400,300,400};
-    public TextView mTime, mSgv, mDirection, mTimestamp, mUploaderBattery, mRigBattery, mDelta, mAvgDelta, mStatus, mBasalRate, mIOB1, mIOB2, mCOB1, mCOB2, mBgi, mLoop, mDay, mMonth, isAAPSv2, mHighLight, mLowLight;
+    public TextView mTime, mSgv, mDirection, mTimestamp, mUploaderBattery, mRigBattery, mWatchBattery, mDelta, mAvgDelta, mStatus, mBasalRate, mIOB1, mIOB2, mCOB1, mCOB2, mBgi, mLoop, mDay, mMonth, isAAPSv2, mHighLight, mLowLight;
     public ImageView mGlucoseDial, mDeltaGauge, mHourHand, mMinuteHand;
     public long datetime;
     public RelativeLayout mRelativeLayout;
@@ -99,6 +99,7 @@ public  abstract class BaseWatchFace extends WatchFace implements SharedPreferen
     public String sDirection = "--";
     public String sUploaderBattery = "--";
     public String sRigBattery = "--";
+    public String sWatchBattery = "--";
     public String sDelta = "--";
     public String sAvgDelta = "--";
     public String sBasalRate = "-.--U/h";
@@ -163,6 +164,7 @@ public  abstract class BaseWatchFace extends WatchFace implements SharedPreferen
                 mBasalRate = (TextView) stub.findViewById(R.id.tmpBasal);
                 mUploaderBattery = (TextView) stub.findViewById(R.id.uploader_battery);
                 mRigBattery = (TextView) stub.findViewById(R.id.rig_battery);
+                mWatchBattery = (TextView) stub.findViewById(R.id.watch_battery);
                 mDelta = (TextView) stub.findViewById(R.id.delta);
                 mAvgDelta = (TextView) stub.findViewById(R.id.avgdelta);
                 isAAPSv2 = (TextView) stub.findViewById(R.id.AAPSv2);
@@ -290,6 +292,7 @@ public  abstract class BaseWatchFace extends WatchFace implements SharedPreferen
                 sBasalRate = dataMap.getString("currentBasal");
                 sUploaderBattery = dataMap.getString("battery");
                 sRigBattery = dataMap.getString("rigBattery");
+                sWatchBattery = "11";
                 detailedIOB = dataMap.getBoolean("detailedIob");
                 sIOB1 = dataMap.getString("iobSum") + "U";
                 sIOB2 = dataMap.getString("iobDetail");
@@ -454,6 +457,15 @@ public  abstract class BaseWatchFace extends WatchFace implements SharedPreferen
                 mRigBattery.setVisibility(View.VISIBLE);
             } else {
                 mRigBattery.setVisibility(View.GONE);
+            }
+        }
+        
+        if (mWatchBattery != null) {
+            if (sharedPrefs.getBoolean("show_watch_battery", false)) {
+                mWatchBattery.setText(sWatchBattery);
+                mWatchBattery.setVisibility(View.VISIBLE);
+            } else {
+                mWatchBattery.setVisibility(View.GONE);
             }
         }
 
