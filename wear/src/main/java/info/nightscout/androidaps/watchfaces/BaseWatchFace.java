@@ -292,7 +292,8 @@ public  abstract class BaseWatchFace extends WatchFace implements SharedPreferen
                 sBasalRate = dataMap.getString("currentBasal");
                 sUploaderBattery = dataMap.getString("battery");
                 sRigBattery = dataMap.getString("rigBattery");
-                sWatchBattery = "11";
+                Intent batteryIntent = registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+                sWatchBattery = Integer.toString(batteryIntent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0));
                 detailedIOB = dataMap.getBoolean("detailedIob");
                 sIOB1 = dataMap.getString("iobSum") + "U";
                 sIOB2 = dataMap.getString("iobDetail");
