@@ -97,9 +97,9 @@ public  abstract class BaseWatchFace extends WatchFace implements SharedPreferen
     public String externalStatusString = "no status";
     public String sSgv = "---";
     public String sDirection = "--";
-    public String sUploaderBattery = "--";
-    public String sRigBattery = "--";
-    public String sWatchBattery = "--";
+    public String sUploaderBattery = "PB";
+    public String sRigBattery = "RB%";
+    public String sWatchBattery = "WB";
     public String sDelta = "--";
     public String sAvgDelta = "--";
     public String sBasalRate = "-.--U/h";
@@ -462,7 +462,7 @@ public  abstract class BaseWatchFace extends WatchFace implements SharedPreferen
         
         if (mWatchBattery != null) {
             if (sharedPrefs.getBoolean("show_watch_battery", false)) {
-                mWatchBattery.setText(sWatchBattery);
+                mWatchBattery.setText(sWatchBattery + "%");
                 mWatchBattery.setVisibility(View.VISIBLE);
             } else {
                 mWatchBattery.setVisibility(View.GONE);
