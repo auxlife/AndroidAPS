@@ -36,7 +36,7 @@ public class SourceNSClientPlugin extends PluginBase implements BgSourceInterfac
     }
 
     private long lastBGTimeStamp = 0;
-    private boolean isAdvancedFilteringEnabled = false;
+    private boolean isAdvancedFilteringEnabled = true;
 
     private SourceNSClientPlugin() {
         super(new PluginDescription()
@@ -49,7 +49,8 @@ public class SourceNSClientPlugin extends PluginBase implements BgSourceInterfac
 
     @Override
     public boolean advancedFilteringSupported() {
-        return isAdvancedFilteringEnabled;
+        //return isAdvancedFilteringEnabled;
+        return true;
     }
 
     @Override
@@ -98,10 +99,7 @@ public class SourceNSClientPlugin extends PluginBase implements BgSourceInterfac
 
     public void detectSource(String source, long timeStamp) {
         if (timeStamp > lastBGTimeStamp) {
-            if (source.contains("G5 Native") || source.contains("G6 Native") || source.contains("AndroidAPS-DexcomG5") || source.contains("AndroidAPS-DexcomG6"))
-                isAdvancedFilteringEnabled = true;
-            else
-                isAdvancedFilteringEnabled = true;
+            isAdvancedFilteringEnabled = true;
             lastBGTimeStamp = timeStamp;
         }
     }
