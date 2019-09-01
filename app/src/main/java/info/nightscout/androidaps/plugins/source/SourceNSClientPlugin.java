@@ -36,7 +36,7 @@ public class SourceNSClientPlugin extends PluginBase implements BgSourceInterfac
     }
 
     private long lastBGTimeStamp = 0;
-    private boolean isAdvancedFilteringEnabled = true;
+    private boolean isAdvancedFilteringEnabled = false;
 
     private SourceNSClientPlugin() {
         super(new PluginDescription()
@@ -49,8 +49,7 @@ public class SourceNSClientPlugin extends PluginBase implements BgSourceInterfac
 
     @Override
     public boolean advancedFilteringSupported() {
-        //return isAdvancedFilteringEnabled;
-        return true;
+        return isAdvancedFilteringEnabled;
     }
 
     @Override
