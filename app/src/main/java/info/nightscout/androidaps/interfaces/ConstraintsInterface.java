@@ -32,7 +32,7 @@ public interface ConstraintsInterface {
     }
 
     default Constraint<Boolean> isAdvancedFilteringEnabled(Constraint<Boolean> value) {
-        return value;
+        return new Constraint<>(true);
     }
 
     default Constraint<Boolean> isSuperBolusEnabled(Constraint<Boolean> value) {
