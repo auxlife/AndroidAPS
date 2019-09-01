@@ -1,3 +1,7 @@
+## Local changes:
+1) Changed NSClient Watch dog perameters
+2) Added watch battery reading to v2 watchface
+
 # AndroidAPS
 
 * Check the wiki: http://wiki.androidaps.org

@@ -101,6 +101,7 @@ public class Home2 extends BaseWatchFace {
             mUploaderBattery.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.dark_uploaderBatteryEmpty));
         }
         mRigBattery.setTextColor(Color.BLACK);
+        mWatchBattery.setTextColor(Color.BLACK);
         mDelta.setTextColor(Color.BLACK);
         mAvgDelta.setTextColor(Color.BLACK);
         mBasalRate.setTextColor(Color.BLACK);
@@ -136,6 +137,7 @@ public class Home2 extends BaseWatchFace {
         mDelta.setTextColor(Color.BLACK);
         mAvgDelta.setTextColor(Color.BLACK);
         mRigBattery.setTextColor(Color.BLACK);
+        mWatchBattery.setTextColor(Color.BLACK);
         mUploaderBattery.setTextColor(Color.BLACK);
         mBasalRate.setTextColor(Color.BLACK);
         mBgi.setTextColor(Color.BLACK);
@@ -199,6 +201,7 @@ public class Home2 extends BaseWatchFace {
                 mUploaderBattery.setTextColor(Color.RED);
             }
             mRigBattery.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.dark_midColor));
+            mWatchBattery.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.dark_midColor));
             mDelta.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.dark_midColor));
             mAvgDelta.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.dark_midColor));
             mBasalRate.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.dark_midColor));
