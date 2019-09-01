@@ -101,7 +101,7 @@ public class SourceNSClientPlugin extends PluginBase implements BgSourceInterfac
             if (source.contains("G5 Native") || source.contains("G6 Native") || source.contains("AndroidAPS-DexcomG5") || source.contains("AndroidAPS-DexcomG6"))
                 isAdvancedFilteringEnabled = true;
             else
-                isAdvancedFilteringEnabled = false;
+                isAdvancedFilteringEnabled = true;
             lastBGTimeStamp = timeStamp;
         }
     }
