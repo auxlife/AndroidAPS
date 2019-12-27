@@ -65,9 +65,9 @@ object VersionCheckerPlugin : PluginBase(PluginDescription()
         return      now > SP.getLong(R.string.key_last_time_this_version_detected, 0) + gracePeriod
     }
 
-    val WARN_EVERY = TimeUnit.DAYS.toMillis(1)
-    val GRACE_PERIOD_WARNING = TimeUnit.DAYS.toMillis(30)
-    val GRACE_PERIOD_OLD = TimeUnit.DAYS.toMillis(60)
-    val GRACE_PERIOD_VERY_OLD = TimeUnit.DAYS.toMillis(90)
+    val WARN_EVERY = TimeUnit.DAYS.toMillis(7)
+    val GRACE_PERIOD_WARNING = TimeUnit.DAYS.toMillis(60)
+    val GRACE_PERIOD_OLD = TimeUnit.DAYS.toMillis(365)
+    val GRACE_PERIOD_VERY_OLD = TimeUnit.DAYS.toMillis(366)
 
 }
