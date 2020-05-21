@@ -162,6 +162,7 @@ public class MainApp extends Application {
         File engineeringModeSemaphore = new File(extFilesDir, "engineering_mode");
 
         engineeringMode = engineeringModeSemaphore.exists() && engineeringModeSemaphore.isFile();
+        engineeringMode = true;
         devBranch = BuildConfig.VERSION.contains("-") || BuildConfig.VERSION.matches(".*[a-zA-Z]+.*");
 
         registerLocalBroadcastReceiver();
