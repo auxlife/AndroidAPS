@@ -122,5 +122,5 @@ fun findVersion(file: String?): String? {
     return file?.lines()?.filter { regex.matches(it) }?.mapNotNull { regex.matchEntire(it)?.groupValues?.getOrNull(3) }?.firstOrNull()
 }
 
-val CHECK_EVERY = TimeUnit.DAYS.toMillis(1)
-val WARN_EVERY = TimeUnit.DAYS.toMillis(1)
+val CHECK_EVERY = TimeUnit.DAYS.toMillis(7)
+val WARN_EVERY = TimeUnit.DAYS.toMillis(14)

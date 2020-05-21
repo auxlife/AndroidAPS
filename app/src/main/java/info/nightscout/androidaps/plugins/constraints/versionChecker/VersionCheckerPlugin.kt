@@ -39,7 +39,7 @@ object VersionCheckerPlugin : PluginBase(PluginDescription()
         checkWarning()
         triggerCheckVersion()
         return if (isOldVersion(gracePeriod.veryOld.daysToMillis()))
-            value.set(false, MainApp.gs(R.string.very_old_version), this)
+            value//.set(false, MainApp.gs(R.string.very_old_version), this)
         else
             value
     }
@@ -73,7 +73,7 @@ object VersionCheckerPlugin : PluginBase(PluginDescription()
 
     override fun applyMaxIOBConstraints(maxIob: Constraint<Double>): Constraint<Double> =
         if (isOldVersion(gracePeriod.old.daysToMillis()))
-            maxIob.set(0.toDouble(), MainApp.gs(R.string.old_version), this)
+            maxIob//.set(0.toDouble(), MainApp.gs(R.string.old_version), this)
         else
             maxIob
 
@@ -82,12 +82,12 @@ object VersionCheckerPlugin : PluginBase(PluginDescription()
         return now > SP.getLong(R.string.key_last_time_this_version_detected, 0) + gracePeriod
     }
 
-    private val WARN_EVERY = TimeUnit.DAYS.toMillis(1)
+    private val WARN_EVERY = TimeUnit.DAYS.toMillis(7)
 
 }
 
 enum class GracePeriod(val warning: Long, val old: Long, val veryOld: Long) {
-    RELEASE(30, 60, 90),
+    RELEASE(60, 365, 366),
     RC(1, 7, 14)
 }
 
