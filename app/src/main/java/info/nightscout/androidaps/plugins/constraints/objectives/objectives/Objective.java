@@ -35,14 +35,14 @@ public abstract class Objective {
         this.spName = spName;
         this.objective = objective;
         this.gate = gate;
-        startedOn = DateUtil.now());
-        accomplishedOn = DateUtil.now());
-        /*startedOn = SP.getLong("Objectives_" + spName + "_started", 0L);
-        accomplishedOn = SP.getLong("Objectives_" + spName + "_accomplished", 0L);
+        startedOn = SP.getLong("Objectives_" + spName + "_started", DateUtil.now());
+        accomplishedOn = SP.getLong("Objectives_" + spName + "_accomplished", DateUtil.now());
+        /*
         if ((accomplishedOn - DateUtil.now()) > T.hours(3).msecs() || (startedOn - DateUtil.now()) > T.hours(3).msecs()) { // more than 3 hours in the future
             startedOn = 0;
             accomplishedOn = 0;
-        }*/
+        }
+        */
         setupTasks(tasks);
         for (Task task : tasks) task.objective = this;
     }
