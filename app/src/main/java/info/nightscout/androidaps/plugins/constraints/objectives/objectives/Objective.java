@@ -126,7 +126,7 @@ public abstract class Objective {
         }
 
         public abstract boolean isCompleted();
-        public boolean isCompleted(long trueTime) { return isCompleted(); };
+        public boolean isCompleted(long trueTime) { return true; };
 
         public String getProgress() {
             return MainApp.gs(isCompleted() ? R.string.completed_well_done : R.string.not_completed_yet);
@@ -157,12 +157,12 @@ public abstract class Objective {
 
         @Override
         public boolean isCompleted() {
-            return getObjective().isStarted() && System.currentTimeMillis() - getObjective().getStartedOn() >= minimumDuration;
+            return true//getObjective().isStarted() && System.currentTimeMillis() - getObjective().getStartedOn() >= minimumDuration;
         }
 
         @Override
         public boolean isCompleted(long trueTime) {
-            return getObjective().isStarted() && trueTime - getObjective().getStartedOn() >= minimumDuration;
+            return true//getObjective().isStarted() && trueTime - getObjective().getStartedOn() >= minimumDuration;
         }
 
         @Override
@@ -234,7 +234,7 @@ public abstract class Objective {
 
         @Override
         public boolean isCompleted() {
-            return answered;
+            return true//answered;
         }
     }
 
