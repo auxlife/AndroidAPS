@@ -71,7 +71,7 @@ public class Objective0 extends Objective {
                 APSInterface usedAPS = ConfigBuilderPlugin.getPlugin().getActiveAPS();
                 if (usedAPS != null && ((PluginBase) usedAPS).isEnabled(PluginType.APS))
                     return true;
-                return false;
+                return true;
             }
         });
         tasks.add(new Task(R.string.activate_profile) {
