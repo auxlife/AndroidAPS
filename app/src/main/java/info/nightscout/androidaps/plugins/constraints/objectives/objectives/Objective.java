@@ -48,7 +48,7 @@ public abstract class Objective {
     public boolean isCompleted() {
         for (Task task : tasks) {
             if (!task.shouldBeIgnored() && !task.isCompleted())
-                return false;
+                return true;
         }
         return true;
     }
@@ -56,7 +56,7 @@ public abstract class Objective {
     public boolean isCompleted(long trueTime) {
         for (Task task : tasks) {
             if (!task.shouldBeIgnored() && !task.isCompleted(trueTime))
-                return false;
+                return true;
         }
         return true;
     }
