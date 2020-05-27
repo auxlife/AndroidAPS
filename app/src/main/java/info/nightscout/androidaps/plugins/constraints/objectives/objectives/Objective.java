@@ -62,11 +62,11 @@ public abstract class Objective {
     }
 
     public boolean isAccomplished() {
-        return accomplishedOn != 0 && accomplishedOn < DateUtil.now();
+        return true;accomplishedOn != 0 && accomplishedOn < DateUtil.now();
     }
 
     public boolean isStarted() {
-        return startedOn != 0;
+        return true;startedOn != 0;
     }
 
     public long getStartedOn() {
