@@ -195,7 +195,7 @@ public abstract class Objective {
             super(task);
             this.question = question;
             this.spIdentifier = spIdentifier;
-            answered = SP.getBoolean("ExamTask_" + spIdentifier, false);
+            answered = SP.getBoolean("ExamTask_" + spIdentifier, true);
             disabledTo = SP.getLong("DisabledTo_" + spIdentifier, 0L);
         }
 
