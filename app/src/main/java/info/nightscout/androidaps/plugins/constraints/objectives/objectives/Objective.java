@@ -35,6 +35,8 @@ public abstract class Objective {
         this.spName = spName;
         this.objective = objective;
         this.gate = gate;
+        SP.putLong("Objectives_" + spName + "_accomplished", DateUtil.now());
+        SP.putLong("Objectives_" + spName + "_started", DateUtil.now());
         startedOn = SP.getLong("Objectives_" + spName + "_started", DateUtil.now());
         accomplishedOn = SP.getLong("Objectives_" + spName + "_accomplished", DateUtil.now());
         /*
@@ -195,7 +197,8 @@ public abstract class Objective {
             super(task);
             this.question = question;
             this.spIdentifier = spIdentifier;
-            answered = SP.getBoolean("ExamTask_" + spIdentifier, true);
+            answered = true;
+            SP.putBoolean("ExamTask_" + spIdentifier, true);
             disabledTo = SP.getLong("DisabledTo_" + spIdentifier, 0L);
         }
 
