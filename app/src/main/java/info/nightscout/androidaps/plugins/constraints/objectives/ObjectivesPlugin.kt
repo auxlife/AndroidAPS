@@ -21,7 +21,7 @@ import java.util.*
 object ObjectivesPlugin : PluginBase(PluginDescription()
         .mainType(PluginType.CONSTRAINTS)
         .fragmentClass(ObjectivesFragment::class.qualifiedName)
-        .alwaysEnabled(Config.APS)
+        //.alwaysEnabled(Config.APS)
         .showInList(Config.APS)
         .pluginName(R.string.objectives)
         .shortName(R.string.objectives_shortname)
